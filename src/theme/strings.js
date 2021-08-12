@@ -102,6 +102,25 @@ const strings = {
         lastName:'Tajudeen',
         phoneNumber:'+234 816127162',
         title:'Settings',
+        titleForAccount:'Account Information',
+        inputAccountOne:"First Name",
+        inputAccountTwo:"Last Name",
+        inputAccountThree:"Phone Number",
+        titleForPassword:"Change Password",
+        inputPasswordOne:"Password",
+        inputPasswordTwo:"New Password",
+        inputPasswordThree:"Retype Password",
+        hiddenChar:'**********',
+        billingTitle:'Billing Information',
+        billingEdit:'Edit',
+        defaultName:'Bosunes Jones',
+        defaultCard:'8679 8726 2XXX XXXX',
+        cardType:'Master Card',
+        accountSettingsTitle:'Account Settings',
+        pushText:'Send Push Notifications',
+        emailText:'Send Email Notifications',
+        customButtonText:"SAVE & CONTINUE",
+        backButton:'Back'
     }
 }
 

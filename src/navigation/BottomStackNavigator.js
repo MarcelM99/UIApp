@@ -11,7 +11,9 @@ import ChatBox from "../screens/ChatBoxScreen";
 import ChatNavigator from "./ChatNavigator";
 import TranzactionScreen from "../screens/TranzactionScreen";
 import SettingsScreen from "../screens/SettingsScreen";
-
+import ProfileScreen from "../screens/ProfileScreen";
+import { createStackNavigator } from "@react-navigation/stack";
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -46,7 +48,7 @@ const BottomTabNavigator = () => {
         ></Tab.Screen>
         <Tab.Screen
           name="Settings"
-          component={SettingsScreen}
+          component={ProfileScreen}
           options={{
             tabBarLabel: "Settings",
             tabBarIcon: ({focused}) => (
@@ -54,6 +56,7 @@ const BottomTabNavigator = () => {
             ),
           }}
         ></Tab.Screen>
+       
       </Tab.Navigator>
     );
   };

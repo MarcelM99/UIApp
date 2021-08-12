@@ -21,7 +21,7 @@ const MainStackNavigator = () => {
             <Stack.Screen name="RecoverPass" component={RecoverPasswordScreen} />
             <Stack.Screen name="Newsletter" component={NewsletterScreen} />
             <Stack.Screen name="NavigationBar" component={NavigationScreen} />
-            <Stack.Screen name="BottomNav" component={BottomTabNavigator} />
+            <Stack.Screen name="BottomNav" component={BottomTabNavigator}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

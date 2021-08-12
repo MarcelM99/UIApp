@@ -32,7 +32,8 @@
     "react-native-snap-carousel": "^3.9.1",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "^12.1.1",
-    "react-native-text-gradient": "^0.1.7"
+    "react-native-text-gradient": "^0.1.7",
+    "switch-button-react-native": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "7.14.8",

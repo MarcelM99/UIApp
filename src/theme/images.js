@@ -72,6 +72,7 @@ const images = {
     card_logo:require('../theme/images/card-logo.png'),
     itunes_logo:require('../theme/images/itunes-logo.png'),
     profile_camera:require('../theme/images/profile-camera.png'),
+    wallet:require('../theme/images/wallet.png'),
 }
 
 export default images;

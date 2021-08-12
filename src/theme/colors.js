@@ -7,7 +7,8 @@ const colors= {
     aqua:'#00E0FF',
     blue_ribbon:'#0047FF',
     aquamarine:'#99FDD9',
-    mattise:'#1E62A2'
+    mattise:'#1E62A2',
+    bridal_heath:'#FFFBF7'
 }
 
 export default colors;
