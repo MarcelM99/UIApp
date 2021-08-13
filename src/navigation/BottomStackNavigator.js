@@ -13,13 +13,16 @@ import TranzactionScreen from "../screens/TranzactionScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import { createStackNavigator } from "@react-navigation/stack";
+import ProfileNavigator from "./ProfileNavigator";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
+const BottomTabNavigator = (props) => {
+  console.log(props.route)
     return (
       <Tab.Navigator
         screenOptions={{headerShown:false,tabBarShowLabel:false}}
+        initialRouteName={props.route.params.screeName}
       >
         <Tab.Screen
           name="DashBoard"
@@ -47,10 +50,11 @@ const BottomTabNavigator = () => {
           }}
         ></Tab.Screen>
         <Tab.Screen
-          name="Settings"
-          component={ProfileScreen}
+          name="ProfileScreen"
+          component={ProfileNavigator}
+          initialParams={{screeName:props.route.params.secoundScreen===undefined?'Profile':props.route.params.secoundScreen}}
           options={{
-            tabBarLabel: "Settings",
+            tabBarLabel: "Settings", 
             tabBarIcon: ({focused}) => (
               focused? <Image source={images.settings_activ}/>: <Image source={images.settings}/>
             ),

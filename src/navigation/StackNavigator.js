@@ -21,7 +21,11 @@ const MainStackNavigator = () => {
             <Stack.Screen name="RecoverPass" component={RecoverPasswordScreen} />
             <Stack.Screen name="Newsletter" component={NewsletterScreen} />
             <Stack.Screen name="NavigationBar" component={NavigationScreen} />
-            <Stack.Screen name="BottomNav" component={BottomTabNavigator}/>
+            <Stack.Screen name="ChatScreen" component={BottomTabNavigator} initialParams={{screeName:'Chat'}}/>
+            <Stack.Screen name="ProfileScr" component={BottomTabNavigator} initialParams={{screeName:'ProfileScreen',secoundScreen:'Profile'}}/>
+            <Stack.Screen name="TranzactionHistory" component={BottomTabNavigator} initialParams={{screeName:'Tranzactions'}}/>
+            <Stack.Screen name="DashBoardScr" component={BottomTabNavigator} initialParams={{screeName:'DashBoard'}}/>
+            <Stack.Screen name="SettingsScr" component={BottomTabNavigator} initialParams={{screeName:'ProfileScreen',secoundScreen:'Settings'}}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

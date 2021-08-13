@@ -121,6 +121,13 @@ const strings = {
         emailText:'Send Email Notifications',
         customButtonText:"SAVE & CONTINUE",
         backButton:'Back'
+    },
+    profile:{
+        back:'Back',
+        title:'Profile',
+        name:'Bosun Jones',
+        value:'# 100,340.00',
+        button:'Edit Profile'
     }
 }
 

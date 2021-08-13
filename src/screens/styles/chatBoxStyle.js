@@ -38,14 +38,15 @@ const styels=StyleSheet.create({
     sendButton:{marginRight: 10},
     sendGradient:{paddingHorizontal: 12, paddingVertical: 6, borderRadius: 5},
     sendText:{color: 'white'},
-    modalCloseButtonView:{backgroundColor: 'grey',alignItems:'flex-end',paddingRight:12,paddingVertical:12},
+    modalCloseButtonView:{backgroundColor: 'rgba(255, 251, 247, 0.5)',alignItems:'flex-end',paddingRight:12,paddingVertical:12},
     modalImageView:{
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'grey',
+      backgroundColor: 'rgba(255, 251, 247, 0.5)',
+      
     },
-    modalImage:{width: '100%', height: '50%'}
+    modalImage:{width: '100%', height: '50%',opacity:1}
   })
 
   export default styels;

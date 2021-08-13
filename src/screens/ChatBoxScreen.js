@@ -63,20 +63,19 @@ const ChatBox = () => {
                 <Text style={styles.messageText}>{x.sender}</Text>
               </View>
               <Text style={styles.timeTextSender}>An hour ago</Text>
-              <Modal visible={modalVisible}>
-                <View style={styles.modalCloseButtonView}>
-                  <TouchableOpacity
-                    onPress={() => setModalVisible(!modalVisible)}>
-                    <Image source={images.close} />
-                  </TouchableOpacity>
-                </View>
-                <View style={styles.modalImageView}>
+              <Modal visible={modalVisible} transparent={true}>
+               
+               
+                <TouchableOpacity style={styles.modalImageView} onPress={() => setModalVisible(!modalVisible)}>
                   <Image
                     resizeMode="cover"
                     style={styles.modalImage}
                     source={x.imageSent}
                   />
-                </View>
+                   </TouchableOpacity>
+             
+               
+                
               </Modal>
             </View>
           ) : null,
