@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../theme/colors";
 
 const styles = StyleSheet.create({
     valueView:{
@@ -14,18 +15,18 @@ const styles = StyleSheet.create({
   },
   valueText:{
     fontSize:24,
-    color:'#333333'
+    color:colors.mine_shaft
   },
   valueTextWithEarnings:{
     fontSize:24,
-    color:'#979797'
+    color:colors.dusty_grey
   },
   earningsView:{
     alignItems: 'center',
     height: '35%',
     justifyContent: 'center',
   },
-  earningsText:{fontSize: 10, color: '#FFFBF7'}
+  earningsText:{fontSize: 10, color: colors.bridal_heath}
 })
 
 export default styles
