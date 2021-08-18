@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, Image, ScrollView} from 'react-native';
 import {LinearTextGradient} from 'react-native-text-gradient';
+import {useNavigation} from '@react-navigation/native';
 import BackComponent from '../components/BackComponent';
 import grad from '../components/ColorEaseing';
 import CustomButton from '../components/CustumButton';
@@ -8,12 +9,11 @@ import InputComponent from '../components/InputComponent';
 import images from '../theme/images';
 import strings from '../theme/strings';
 import styles from './styles/recoverPasswordScreenStyles';
-import { useNavigation } from "@react-navigation/native";
 
 const RecoverPasswordScreen = () => {
   const [text, setText] = useState();
   const navigation = useNavigation();
-  const NavigateTo = (screenName) => navigation.navigate(screenName)
+  const NavigateTo = screenName => navigation.navigate(screenName);
   const NavigateBack = () => navigation.goBack();
   return (
     <View style={styles.background}>
@@ -35,6 +35,7 @@ const RecoverPasswordScreen = () => {
         </View>
         <InputComponent
           img={images.group}
+          value={text}
           placeHolder={strings.recoverPassword.buttonPlaceHolder}
           textChange={setText}
         />
@@ -43,7 +44,11 @@ const RecoverPasswordScreen = () => {
             {strings.recoverPassword.bottomText}
           </Text>
         </View>
-        <CustomButton text={strings.recoverPassword.customButton} navTo={NavigateTo} screenName='SignIn'/>
+        <CustomButton
+          text={strings.recoverPassword.customButton}
+          navTo={NavigateTo}
+          screenName="SignIn"
+        />
       </ScrollView>
     </View>
   );

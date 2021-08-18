@@ -6,18 +6,18 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import BackComponent from '../components/BackComponent';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import BackComponent from '../components/BackComponent';
 import grad from '../components/ColorEaseing';
-import CircularProgress from '../components/CircularProgress';
-import images from '../theme/images';
-import SettingsInformation from '../components/SettingsInformation';
-import strings from '../theme/strings';
+import CircularProgress from '../components/proggresBars/CircularProgress';
+import SettingsInformation from '../components/settings/SettingsInformation';
 import CustomButton from '../components/CustumButton';
-import SwitchButton from '../components/SwitchButton';
+import SwitchButton from '../components/settings/SwitchButton';
 import styles from './styles/settingsScreenStyles';
 import colors from '../theme/colors';
+import images from '../theme/images';
+import strings from '../theme/strings';
 
 const SettingsScreen = () => {
   const navigation = useNavigation();
@@ -83,6 +83,7 @@ const SettingsScreen = () => {
           placeHolderTwo={strings.settings.hiddenChar}
           placeHolderThree={strings.settings.hiddenChar}
           setDatas={setPassword}
+          datas={password}
         />
         <View style={styles.billingView}>
           <Text style={styles.billingTitleText}>
@@ -144,6 +145,7 @@ const SettingsScreen = () => {
             <View style={styles.notificationsButtonView}>
               <SwitchButton
                 switchSpeedChange={100}
+                activeSwitch={activeSwitch}
                 switchHeight={18}
                 switchWidth={35}
                 onValueChange={val => setActiveSwitch(val)}
@@ -155,6 +157,7 @@ const SettingsScreen = () => {
             <View style={styles.emailButton}>
               <SwitchButton
                 switchSpeedChange={100}
+                activeSwitch={activeSwitch}
                 switchHeight={18}
                 switchWidth={35}
                 onValueChange={val => setActiveSwitch(val)}

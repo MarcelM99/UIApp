@@ -1,19 +1,18 @@
 import React from 'react';
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-import OnBoarding5 from "../screens/Onboarding5";
-import SignUpScreen from "../screens/SignUpScreen";
-import RegistrationScreen from "../screens/RegistrationScreen";
-import RecoverPasswordScreen from "../screens/RecoverPasswordScreen";
-import NewsletterScreen from "../screens/NewsletterScreen";
-import NavigationScreen from "../screens/NavigationScreen";
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import OnBoarding5 from '../screens/Onboarding5';
+import SignUpScreen from '../screens/SignUpScreen';
+import RegistrationScreen from '../screens/RegistrationScreen';
+import RecoverPasswordScreen from '../screens/RecoverPasswordScreen';
+import NewsletterScreen from '../screens/NewsletterScreen';
+import NavigationScreen from '../screens/NavigationScreen';
 import BottomTabNavigator from './BottomStackNavigator';
 const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
-
-    return (
-        <NavigationContainer>
+  return (
+    <NavigationContainer>
             <Stack.Navigator initialRouteName={'OnBoarding'} screenOptions={{headerMode:false}}>
             <Stack.Screen name="OnBoarding" component={OnBoarding5} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />
@@ -28,7 +27,7 @@ const MainStackNavigator = () => {
             <Stack.Screen name="SettingsScr" component={BottomTabNavigator} initialParams={{screeName:'ProfileScreen',secoundScreen:'Settings'}}/>
             </Stack.Navigator>
         </NavigationContainer>
-    )
-}
+  );
+};
 
 export default MainStackNavigator;

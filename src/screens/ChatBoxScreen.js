@@ -7,31 +7,38 @@ import {
   TouchableOpacity,
   Modal,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import {ScrollView} from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import BackComponent from '../components/BackComponent';
-import images from '../theme/images';
 import grad from '../components/ColorEaseing';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import images from '../theme/images';
 import styles from './styles/chatBoxStyle';
-import { useNavigation } from "@react-navigation/native";
+import strings from '../theme/strings';
 
 const ChatBox = () => {
   const [message, setMessage] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
+  const [messageRecived, setMessageRecived] = useState(
+    strings.chat.recivedMessage,
+  );
+  const [messages, setMessages] = useState([
+    {sender: messageRecived, reciver: '', imageSent: strings.chat.empty},
+  ]);
   let textInputRef = useRef(null);
   let scrollRef = useRef(null);
-  const [messageRecived, setMessageRecived] = useState('Salut');
-  const [messages, setMessages] = useState([
-    {sender: messageRecived, reciver: '', imageSent: 'none'},
-  ]);
   const navigation = useNavigation();
   const NavigateBack = () => navigation.goBack();
-
   const options = {mediaType: 'photo'};
+
   return (
     <View style={styles.background}>
-      <BackComponent showCircle={true} text="Back" navBack={NavigateBack}/>
+      <BackComponent
+        showCircle={true}
+        text={strings.chat.back}
+        navBack={NavigateBack}
+      />
       <ScrollView
         style={styles.scrollview}
         ref={ref => (scrollRef = ref)}
@@ -47,7 +54,7 @@ const ChatBox = () => {
                 locations={grad.grad.locations}
                 start={{x: 0.5, y: 0}}
                 end={{x: 0.5, y: 1}}>
-                {x.imageSent != 'none' ? (
+                {x.imageSent != strings.chat.empty ? (
                   <TouchableOpacity
                     onPress={() => setModalVisible(!modalVisible)}>
                     <Image style={styles.image} source={x.imageSent} />
@@ -58,15 +65,19 @@ const ChatBox = () => {
                   </View>
                 )}
               </LinearGradient>
-              <Text style={styles.timeText}>An hour ago</Text>
+              <Text style={styles.timeText}>{strings.chat.timeAgo}</Text>
               <View style={styles.messageRecivedView}>
                 <Text style={styles.messageText}>{x.sender}</Text>
               </View>
-              <Text style={styles.timeTextSender}>An hour ago</Text>
-              <Modal visible={modalVisible} transparent={true}>
-               
-               
-                <TouchableOpacity style={styles.modalImageView} onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={styles.timeTextSender}>{strings.chat.timeAgo}</Text>
+              <Modal visible={modalVisible}>
+                <View style={styles.modalCloseButtonView}>
+                  <TouchableOpacity
+                    onPress={() => setModalVisible(!modalVisible)}>
+                    <Image source={images.close} />
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.modalImageView}>
                   <Image
                     resizeMode="cover"
                     style={styles.modalImage}
@@ -85,7 +96,7 @@ const ChatBox = () => {
         <TextInput
           ref={ref => (textInputRef = ref)}
           style={styles.textInput}
-          placeholder="Type something here"
+          placeholder={strings.chat.placeHolder}
           onChangeText={text => setMessage(text)}
         />
         <TouchableOpacity
@@ -93,7 +104,11 @@ const ChatBox = () => {
             launchCamera(options, response =>
               setMessages(messages => [
                 ...messages,
-                {reciver: message, sender: 'Salut', imageSent: response.assets},
+                {
+                  reciver: message,
+                  sender: strings.chat.recivedMessage,
+                  imageSent: response.assets,
+                },
               ]),
             )
           }>
@@ -104,7 +119,11 @@ const ChatBox = () => {
             launchImageLibrary(options, response =>
               setMessages(messages => [
                 ...messages,
-                {reciver: message, sender: 'Salut', imageSent: response.assets},
+                {
+                  reciver: message,
+                  sender: strings.chat.recivedMessage,
+                  imageSent: response.assets,
+                },
               ]),
             )
           }>
@@ -116,7 +135,11 @@ const ChatBox = () => {
           onPress={() => (
             setMessages(messages => [
               ...messages,
-              {reciver: message, sender: 'Salut', imageSent: 'none'},
+              {
+                reciver: message,
+                sender: strings.chat.recivedMessage,
+                imageSent: strings.chat.empty,
+              },
             ]),
             textInputRef.clear()
           )}>
@@ -126,7 +149,7 @@ const ChatBox = () => {
             locations={grad.grad.locations}
             start={{x: 0.5, y: 0}}
             end={{x: 0.5, y: 1}}>
-            <Text style={styles.sendText}>Send</Text>
+            <Text style={styles.sendText}>{strings.chat.sendButton}</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>

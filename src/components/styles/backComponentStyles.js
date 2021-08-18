@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../theme/colors';
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: '#F8F8F8',
+    backgroundColor: colors.alabaster,
     borderBottomWidth: 0.2,
     alignItems: 'flex-start',
     flexDirection: 'row',

@@ -1,20 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image ,Text } from "react-native";
+import {Image} from "react-native";
 import images from "../theme/images";
-
-import DashBoardScreen from "../screens/DashboardScreen";
 import InnerNavigator from "./InnerNavigator";
-import SignUpScreen from "../screens/SignUpScreen";
-import ChatNotifications from "../screens/ChatNotifications";
-import ChatBox from "../screens/ChatBoxScreen";
 import ChatNavigator from "./ChatNavigator";
 import TranzactionScreen from "../screens/TranzactionScreen";
-import SettingsScreen from "../screens/SettingsScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import { createStackNavigator } from "@react-navigation/stack";
 import ProfileNavigator from "./ProfileNavigator";
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = (props) => {

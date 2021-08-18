@@ -4,9 +4,10 @@ import {
   pixelSizeVertical,
   pixelSizeHorizontal,
 } from '../../components/NormalizeComp';
+import colors from '../../theme/colors';
 
 const styles = StyleSheet.create({
-  background:{flex: 1},
+  background: {flex: 1},
   dotStyle: {alignItems: 'center', marginBottom: 30, marginHorizontal: 2},
   inactiveDot: {
     paddingLeft: 4,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   activeDotMiddle: {
     height: 8,
     width: 8,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     borderRadius: 4,
   },
   skipButton: {
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   },
   skipButtonText: {
     fontWeight: '700',
-    color: '#979797',
+    color: colors.dusty_grey,
     fontSize: fontPixel(16),
   },
   blankSpace: {marginTop: pixelSizeVertical(60)},
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     marginVertical: pixelSizeHorizontal(8),
     fontSize: fontPixel(16),
     fontWeight: 'bold',
-    color: '#FFFBF7',
+    color: colors.bridal_heath,
   },
 });
 

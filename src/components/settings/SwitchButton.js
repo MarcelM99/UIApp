@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View,TouchableOpacity, StyleSheet, Animated} from 'react-native';
-import PropTypes from 'prop-types';
+import {View, TouchableOpacity, StyleSheet, Animated} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import grad from './ColorEaseing';
+import PropTypes from 'prop-types';
+import grad from '../ColorEaseing';
+import colors from '../../theme/colors';
 
 export default class SwitchButton extends Component {
   static propTypes = {
@@ -83,7 +84,7 @@ export default class SwitchButton extends Component {
             colors={
               this.state.activeSwitch != 1
                 ? grad.grad.colors
-                : ['#C4C4C4', '#C4C4C4']
+                : [colors.silver, colors.silver]
             }
             locations={
               this.state.activeSwitch != 1 ? grad.grad.locations : [0, 1]
@@ -98,8 +99,6 @@ export default class SwitchButton extends Component {
                   this.props.switchBorderRadius !== undefined
                     ? this.props.switchBorderRadius
                     : this.state.sbHeight / 2,
-
-              
               },
             ]}>
             <View
@@ -116,14 +115,14 @@ export default class SwitchButton extends Component {
                   style={[
                     switchStyles.wayBtnActive,
                     {
-                      width: this.props.switchWidth / 2 +1,
+                      width: this.props.switchWidth / 2 + 1,
                       height: this.props.switchHeight,
                       borderRadius:
                         this.props.switchBorderRadius !== undefined
                           ? this.props.switchBorderRadius
                           : this.state.sbHeight / 2,
                       backgroundColor:
-                        this.props.btnBackgroundColor || '#FFFBF7',
+                        this.props.btnBackgroundColor || colors.bridal_heath,
                     },
                   ]}
                 />

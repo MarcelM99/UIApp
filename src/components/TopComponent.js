@@ -1,12 +1,16 @@
 import React from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
+import CircularProgress from './proggresBars/CircularProgress';
 import images from '../theme/images';
 import styles from './styles/backComponentStyles';
-import CircularProgress from './CircularProgress';
-const TopComponent = ({ navBack, showCircle , screenName}) => {
+import colors from '../theme/colors';
+
+const TopComponent = ({navBack, showCircle, screenName}) => {
   return (
     <View style={styles.background}>
-      <TouchableOpacity onPress={() => navBack(screenName)} style={styles.backButton}>
+      <TouchableOpacity
+        onPress={() => navBack(screenName)}
+        style={styles.backButton}>
         <Image source={images.menu}></Image>
       </TouchableOpacity>
       {showCircle ? (
@@ -16,8 +20,8 @@ const TopComponent = ({ navBack, showCircle , screenName}) => {
             activeStrokeWidth={5}
             inActiveStrokeWidth={4}
             radius={30}
-            activeStrokeColor='url(#grad)'
-            inActiveStrokeColor="pink"
+            activeStrokeColor="url(#grad)"
+            inActiveStrokeColor={colors.maevelous}
             inActiveStrokeOpacity={0.2}
           />
         </View>

@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../theme/colors';
 
 const styles = StyleSheet.create({
-  background: {backgroundColor: '#FFFBF7', flex: 1},
+  background: {backgroundColor: colors.bridal_heath, flex: 1},
   buttonsView: {alignItems: 'center', borderBottomWidth: 0.3, marginTop: 20},
   name: {
     fontSize: 22,
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
   imageView: {flexDirection: 'row', marginTop: 10, marginBottom: 20},
   image: {marginRight: 6},
   buttons: {marginTop: 40, alignItems: 'center'},
-  shutdownImg:{marginTop:20}
+  shutdownImg: {marginTop: 20},
 });
 
 export default styles;

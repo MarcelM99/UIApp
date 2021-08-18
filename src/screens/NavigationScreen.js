@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import BackComponent from '../components/BackComponent';
-import CircularProgress from '../components/CircularProgress';
+import CircularProgress from '../components/proggresBars/CircularProgress';
 import {LinearTextGradient} from 'react-native-text-gradient';
 import grad from '../components/ColorEaseing';
 import images from '../theme/images';

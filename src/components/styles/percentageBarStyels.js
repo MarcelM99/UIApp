@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../theme/colors";
 
 const styles = (percentage,height,completedColor) => StyleSheet.create({
     background:{marginHorizontal:58,
@@ -7,7 +8,7 @@ const styles = (percentage,height,completedColor) => StyleSheet.create({
     },
     activeView:{
       height:height/2,
-      backgroundColor:'grey',
+      backgroundColor:colors.dove_grey,
       width:'100%',
       position:'absolute',
       borderRadius:5,

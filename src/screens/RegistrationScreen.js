@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, View, Text, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import styles from './styles/registrationScreenStyles';
+import {useNavigation} from '@react-navigation/native';
 import BackComponent from '../components/BackComponent';
 import grad from '../components/ColorEaseing';
 import CustomButton from '../components/CustumButton';
-import ImageComponent from '../components/ImageComponent';
+import ImageComponent from '../components/registration/ImageComponent';
 import InputComponent from '../components/InputComponent';
-import LoginMethods from '../components/LoginMethods';
+import LoginMethods from '../components/registration/LoginMethods';
 import images from '../theme/images';
 import strings from '../theme/strings';
-import { useNavigation } from "@react-navigation/native";
+import styles from './styles/registrationScreenStyles';
 
 const RegistrationScreen = () => {
   const [textChanged, setTextChanged] = useState();
   const navigation = useNavigation();
-  const NavigateTo = (screenName) => navigation.navigate(screenName);
+  const NavigateTo = screenName => navigation.navigate(screenName);
   const NavigateBack = () => navigation.goBack();
   return (
     <View style={styles.background}>
@@ -30,6 +30,7 @@ const RegistrationScreen = () => {
         <InputComponent
           img={images.group2}
           placeHolder={strings.login.password}
+          value={textChanged}
           textChange={setTextChanged}
         />
         <View style={styles.resetPasswordView}>
@@ -39,7 +40,11 @@ const RegistrationScreen = () => {
             </Text>
           </TouchableOpacity>
         </View>
-        <CustomButton text={strings.login.login} navTo={NavigateTo} screenName='NavigationBar'/>
+        <CustomButton
+          text={strings.login.login}
+          navTo={NavigateTo}
+          screenName="NavigationBar"
+        />
         <LoginMethods text={strings.login.socialMediatext} />
       </ScrollView>
       <TouchableOpacity onPress={() => NavigateTo('SignUp')}>
