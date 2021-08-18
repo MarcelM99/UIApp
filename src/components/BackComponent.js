@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
-import images from '../theme/images';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {LinearTextGradient} from 'react-native-text-gradient';
+import CircularProgress from './proggresBars/CircularProgress';
 import grad from '../components/ColorEaseing';
 import styles from './styles/backComponentStyles';
-import CircularProgress from './CircularProgress';
+import images from '../theme/images';
+import colors from '../theme/colors';
+
 const BackComponent = ({text, navBack, showCircle}) => {
   return (
     <View style={styles.background}>
@@ -26,8 +28,8 @@ const BackComponent = ({text, navBack, showCircle}) => {
             activeStrokeWidth={5}
             inActiveStrokeWidth={4}
             radius={30}
-            activeStrokeColor='url(#grad)'
-            inActiveStrokeColor="pink"
+            activeStrokeColor="url(#grad)"
+            inActiveStrokeColor={colors.maevelous}
             inActiveStrokeOpacity={0.2}
           />
         </View>

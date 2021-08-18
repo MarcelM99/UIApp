@@ -1,17 +1,17 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, Easing} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {LinearTextGradient} from 'react-native-text-gradient';
 import LinearGradient from 'react-native-linear-gradient';
-import strings from '../theme/strings';
-import styles from '../screens/styles/onBoardingStyles';
-import grad from '../components/ColorEaseing'
+import strings from '../../theme/strings';
+import styles from '../../screens/styles/onBoardingStyles';
+import grad from '../ColorEaseing'
 
-const Boarding = ({item, ref3,navTo,screenName}) => {
+const Boarding = ({item,navTo,screenName}) => {
   return (
     <View key={item.item.item} >
       {item.item.item !== 3 ? (
         <TouchableOpacity
-          onPress={() => ref3(item.item.item)}
+          onPress={() => navTo(screenName)}
           style={styles.skipButton}>
           <Text
             style={styles.skipButtonText}>

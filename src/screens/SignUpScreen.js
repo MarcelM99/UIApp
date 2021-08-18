@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import BackComponent from '../components/BackComponent';
-import ImageComponent from '../components/ImageComponent';
-import strings from '../theme/strings';
-import images from '../theme/images';
+import ImageComponent from '../components/registration/ImageComponent';
 import InputComponent from '../components/InputComponent';
-import ProcentBar from '../components/ProcentBar';
+import ProcentBar from '../components/proggresBars/ProcentBar';
 import CustomButton from '../components/CustumButton';
-import LoginMethods from '../components/LoginMethods';
+import LoginMethods from '../components/registration/LoginMethods';
 import colors from '../theme/colors';
 import styles from './styles/signUpScreenStyles';
-import { useNavigation } from "@react-navigation/native";
+import strings from '../theme/strings';
+import images from '../theme/images';
+
 const _inputFields = [
   {
     img: images.name,
@@ -33,7 +34,7 @@ const _inputFields = [
 const SignUpScreen = () => {
   const [text, setText] = useState();
   const navigation = useNavigation();
-  const NavigateTo = (screnName) => navigation.navigate(screnName)
+  const NavigateTo = screnName => navigation.navigate(screnName);
   const NavigateBack = () => navigation.goBack();
   return (
     <View style={styles.background}>
@@ -63,7 +64,11 @@ const SignUpScreen = () => {
             <Text style={styles.barText}>{strings.register.fullBar}</Text>
           </View>
         </View>
-        <CustomButton text={strings.register.buttonText} navTo={NavigateTo} screenName='NavigationBar'/>
+        <CustomButton
+          text={strings.register.buttonText}
+          navTo={NavigateTo}
+          screenName="NavigationBar"
+        />
         <View style={styles.bottomViewText}>
           <Text style={styles.bottomText}>{strings.register.bottomText}</Text>
         </View>

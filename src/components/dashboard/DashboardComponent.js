@@ -1,8 +1,9 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import Svg, {Ellipse, LinearGradient, Stop} from 'react-native-svg';
-import Card from '../components/CardComponent';
-import styles from './styles/dashboardComponentStyels'
+import Card from './CardComponent';
+import styles from '../styles/dashboardComponentStyels';
+
 const DashboardComponent = ({
   name,
   background,
@@ -47,15 +48,10 @@ const DashboardComponent = ({
           <Stop offset="0.4" stopColor={colors[1]} stopOpacity="1" />
           <Stop offset="1" stopColor={colors[0]} stopOpacity="1" />
         </LinearGradient>
-        <View
-          style={styles.subtitleView}>
-          <Text
-            style={styles.currencyText}>
+        <View style={styles.subtitleView}>
+          <Text style={styles.currencyText}>
             {currency}
-            <Text
-              style={styles.subtitleText}>
-              {subtitle}
-            </Text>
+            <Text style={styles.subtitleText}>{subtitle}</Text>
           </Text>
         </View>
       </Svg>

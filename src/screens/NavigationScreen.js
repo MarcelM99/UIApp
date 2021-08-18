@@ -7,15 +7,16 @@ import {
   BackHandler,
   ScrollView,
 } from 'react-native';
-import BackComponent from '../components/BackComponent';
-import CircularProgress from '../components/CircularProgress';
 import {LinearTextGradient} from 'react-native-text-gradient';
+import {useNavigation} from '@react-navigation/native';
+import BackComponent from '../components/BackComponent';
+import CircularProgress from '../components/proggresBars/CircularProgress';
 import grad from '../components/ColorEaseing';
-import images from '../theme/images';
 import SimpleButton from '../components/SimpleButton';
+import images from '../theme/images';
 import styles from './styles/navigatioonScreenStyles';
 import strings from '../theme/strings';
-import {useNavigation} from '@react-navigation/native';
+
 const _buttons = [
   {
     name: strings.navigationScreen.button1,
@@ -54,7 +55,7 @@ const NavigationScreen = () => {
           activeStrokeWidth={5}
           inActiveStrokeWidth={4}
           radius={50}
-          activeStrokeColor='url(#grad)'
+          activeStrokeColor="url(#grad)"
           inActiveStrokeColor="pink"
           inActiveStrokeOpacity={0.2}
         />

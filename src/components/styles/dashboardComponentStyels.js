@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../theme/colors";
 const styles = StyleSheet.create({
     subtitleView:{
       marginHorizontal: 36,
@@ -6,12 +7,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     currencyText:{
-      color: 'white',
+      color: colors.white,
       fontWeight: 'bold',
       textAlign: 'center',
     },
     subtitleText:{
-      color: 'white',
+      color: colors.white,
       textAlign: 'center',
       fontWeight: 'normal',
     }

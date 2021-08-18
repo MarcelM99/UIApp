@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
+import colors from "../../theme/colors";
 const styles = StyleSheet.create({
-    background: {flex: 1, backgroundColor: '#FFFBF7'},
+    background: {flex: 1, backgroundColor: colors.bridal_heath},
     imageView: {alignItems: 'center', marginTop: 30},
     gradientView: {
       alignItems: 'center',
