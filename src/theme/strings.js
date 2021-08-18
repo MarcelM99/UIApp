@@ -174,5 +174,4 @@ const strings = {
       button:'Edit Profile'
   }
 };
-
 export default strings;

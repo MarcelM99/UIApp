@@ -83,7 +83,10 @@ const ChatBox = () => {
                     style={styles.modalImage}
                     source={x.imageSent}
                   />
-                </View>
+                   </TouchableOpacity>
+             
+               
+                
               </Modal>
             </View>
           ) : null,

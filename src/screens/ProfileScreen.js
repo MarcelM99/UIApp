@@ -12,6 +12,7 @@ import images from '../theme/images';
 import strings from '../theme/strings';
 import styles from './styles/profileStyles';
 
+
 const _tranzactions = [
   {
     name: strings.tranzactions.amazon,
@@ -96,6 +97,7 @@ const ProfileScreen = () => {
           ))}
         </View>
       </ScrollView>
+
     </View>
   );
 };

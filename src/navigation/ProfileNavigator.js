@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import SettingsScreen from '../screens/SettingsScreen'
 import ProfileScreen from '../screens/ProfileScreen'
