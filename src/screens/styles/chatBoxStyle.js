@@ -60,3 +60,4 @@ const styels = StyleSheet.create({
 });
 
 export default styels;
+

@@ -21,22 +21,27 @@ const _buttons = [
   {
     name: strings.navigationScreen.button1,
     active: true,
+    screenName:'DashBoardScr'
   },
   {
     name: strings.navigationScreen.button2,
     active: false,
+    screenName:'ProfileScr'
   },
   {
     name: strings.navigationScreen.button3,
     active: false,
+    screenName:'ChatScreen'
   },
   {
     name: strings.navigationScreen.button4,
     active: false,
+    screenName:'TranzactionHistory'
   },
   {
     name: strings.navigationScreen.button5,
     active: false,
+    screenName:'SettingsScr'
   },
 ];
 const NavigationScreen = () => {
@@ -79,7 +84,7 @@ const NavigationScreen = () => {
               name={x.name}
               active={x.active}
               navTo={NavigateTo}
-              screenName="BottomNav"
+            screenName={x.screenName}
             />
           ))}
           <TouchableOpacity onPress={() => BackHandler.exitApp()}>

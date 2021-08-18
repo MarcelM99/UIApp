@@ -33,6 +33,7 @@ const BottomTabNavigator = () => {
               <Image source={images.chat_activ} />
             ) : (
               <Image source={images.chat} />
+
             ),
         }}></Tab.Screen>
       <Tab.Screen

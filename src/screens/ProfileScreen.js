@@ -8,6 +8,7 @@ import grad from '../components/ColorEaseing';
 import TranzactionComponent from '../components/TranzactionComponent';
 import colors from '../theme/colors';
 import images from '../theme/images';
+
 import strings from '../theme/strings';
 import styles from './styles/profileStyles';
 
@@ -35,6 +36,10 @@ const _tranzactions = [
   },
 ];
 const ProfileScreen = () => {
+  
+  const navigation = useNavigation();
+  const NavigateTo = (screnName) => navigation.navigate(screnName)
+  const NavigateBack = () => navigation.goBack();
   return (
     <View style={styles.background}>
       <BackComponent text="Back" />
@@ -90,6 +95,7 @@ const ProfileScreen = () => {
           ))}
         </View>
       </ScrollView>
+
     </View>
   );
 };
