@@ -116,7 +116,7 @@ const strings = {
     text3:'Total Numbers',
     number1:'08',
     number2:'03',
-    number3:'01',
+    number3:'01'
   },
   settings: {
     firstName: 'Bosunes Jones',

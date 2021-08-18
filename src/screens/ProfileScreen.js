@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 import LinearGradient from 'react-native-linear-gradient';
 import {LinearTextGradient} from 'react-native-text-gradient';
 import BackComponent from '../components/BackComponent';
@@ -35,9 +36,14 @@ const _tranzactions = [
   },
 ];
 const ProfileScreen = () => {
+ 
+  const navigation = useNavigation();
+  const NavigateTo = (screnName) => navigation.navigate(screnName)
+  const NavigateBack = () => navigation.goBack();
+
   return (
     <View style={styles.background}>
-      <BackComponent text="Back" />
+      <BackComponent text="Back" navBack={NavigateBack}/>
       <ScrollView>
         <View style={styles.titleView}>
           <Text style={styles.titleText}>{strings.profile.title}</Text>
@@ -64,7 +70,7 @@ const ProfileScreen = () => {
             <Image style={styles.image} source={images.wallet} />
             <Text style={styles.imageText}>{strings.profile.value}</Text>
           </View>
-          <TouchableOpacity style={styles.editButton}>
+          <TouchableOpacity style={styles.editButton} onPress={() => NavigateTo('Settings')}>
             <LinearTextGradient
               colors={grad.grad.colors}
               locations={grad.grad.locations}
