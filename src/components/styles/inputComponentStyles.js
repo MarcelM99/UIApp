@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../theme/colors';
 
 const styles = StyleSheet.create({
   inputView: {
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 60,
     borderRadius: 5,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     flexDirection: 'row',
     alignItems: 'center',
   },

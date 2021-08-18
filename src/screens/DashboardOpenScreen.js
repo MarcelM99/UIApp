@@ -1,17 +1,14 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  ScrollView,
-} from 'react-native';
-import TopComponent from '../components/TopComponent';
-import {useNavigation} from '@react-navigation/native';
-import DashboardComponent from '../components/DashboardComponent';
+import {View, Text, TextInput, ScrollView} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import {useNavigation} from '@react-navigation/native';
+import DashboardComponent from '../components/dashboard/DashboardComponent';
+import TopComponent from '../components/TopComponent';
 import DashedView from '../components/DashedView';
 import CustomButton from '../components/CustumButton';
 import styles from './styles/dashboardOpemStyles';
+import strings from '../theme/strings';
+
 const DashboardOpen = ({route}) => {
   const [open1, setOpen1] = useState(false);
   const [value1, setValue1] = useState(null);
@@ -67,16 +64,13 @@ const DashboardOpen = ({route}) => {
           currency={currency}
           subtitle={subtitle}
         />
-        <View
-          style={styles.subtitleView}>
+        <View style={styles.subtitleView}>
           <Text style={styles.subtitleText}>
-            The total value you derived here will be the amount you’ll be
-            receiving during the total transaction process
+           {strings.dashboard.subTitle}
           </Text>
         </View>
         {!multipleOptions ? (
-          <View
-            style={styles.oneOptionView}>
+          <View style={styles.oneOptionView}>
             <TextInput style={styles.textInput} placeholder={name + ' value'} />
           </View>
         ) : (
@@ -117,11 +111,10 @@ const DashboardOpen = ({route}) => {
             />
           </View>
         )}
-        <DashedView value='N 00,000.00'/>
+        <DashedView value="N 00,000.00" />
         <View style={styles.buttonView}>
-        <CustomButton text='CONTINUE'/>
+          <CustomButton text="CONTINUE" />
         </View>
-       
       </ScrollView>
     </View>
   );

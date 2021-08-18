@@ -1,14 +1,15 @@
 import React, {useRef, useState} from 'react';
 import {View, TouchableOpacity} from 'react-native';
-import Boarding from '../components/BoardingComponent';
+import {useNavigation} from '@react-navigation/native';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
+import Boarding from '../components/boarding/BoardingComponent';
+import {widthPixel} from '../components/NormalizeComp';
 import images from '../theme/images';
 import strings from '../theme/strings';
-import {widthPixel} from '../components/NormalizeComp';
 import colors from '../theme/colors';
 import styles from './styles/onBoardingStyles';
-import { useNavigation } from "@react-navigation/native";
+
 const data = [
   {
     item: 1,
@@ -31,17 +32,24 @@ const data = [
 ];
 const OnBoarding5 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  let ref2 = useRef(null);
   const navigation = useNavigation();
-  const NavigateTo = (screenName) => navigation.navigate(screenName) 
+  const NavigateTo = screenName => navigation.navigate(screenName);
+  let ref2 = useRef(null);
   const renderItem = item => {
-    return <Boarding item={item} ref3={getToIndex} navTo={NavigateTo} screenName='SignIn'></Boarding>;
+    return (
+      <Boarding
+        key={item.item}
+        item={item}
+        ref3={getToIndex}
+        navTo={NavigateTo}
+        screenName="SignIn"></Boarding>
+    );
   };
   const getToIndex = i => ref2._snapToItem(ref2._getPositionIndex(i));
   return (
     <View style={styles.background}>
       <Carousel
-      contentContainerStyle={styles.background}
+        contentContainerStyle={styles.background}
         ref={ref => (ref2 = ref)}
         data={data}
         renderItem={renderItem}
@@ -54,7 +62,7 @@ const OnBoarding5 = () => {
         inactiveDotOpacity={1}
         inactiveDotScale={1}
         renderDots={activeIndex =>
-          data.map((screen, i) => {
+          data.map(i => {
             return (
               <TouchableOpacity
                 style={styles.dotStyle}

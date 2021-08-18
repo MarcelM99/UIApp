@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
-import styles from './styles/imageComponentStyles';
+import styles from '../styles/imageComponentStyles';
+
 const ImageComponent = ({img, text}) => {
   return (
     <View style={styles.backgroundImage}>

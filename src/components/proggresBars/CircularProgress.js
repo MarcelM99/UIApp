@@ -1,18 +1,11 @@
 import React, {useEffect, useRef} from 'react';
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  Animated,
-  Image,
-  ImageBackground,
-} from 'react-native';
-import PropTypes from 'prop-types';
+import {View, TextInput, Animated, Image, ImageBackground} from 'react-native';
 import Svg, {G, Circle, LinearGradient, Stop, Defs} from 'react-native-svg';
-import { dynamicStyles } from './styles/circularProggresStyles';
+import PropTypes from 'prop-types';
+import {dynamicStyles} from '../styles/circularProggresStyles';
+import colors from '../../theme/colors';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-const AnimatedInput = Animated.createAnimatedComponent(TextInput);
 
 const CircularProgress = props => {
   const {
@@ -106,7 +99,9 @@ const CircularProgress = props => {
             ref={circleRef}
             cx="50%"
             cy="50%"
-            stroke={activeStrokeColor==='#FFFFFF'?'url(#grad)':activeStrokeColor}
+            stroke={
+              activeStrokeColor === colors.white ? 'url(#grad)' : activeStrokeColor
+            }
             strokeWidth={activeStrokeWidth}
             r={radius}
             fill={'transparent'}
@@ -123,29 +118,32 @@ const CircularProgress = props => {
               </ImageBackground>
             </View>
           ) : (
-            <View style={{alignItems:'center',justifyContent:'center',height:radius*2}}>
-            <Image source={image}/>
-            <Circle
-              cx="50%"
-              cy="50%"
-              r={(60 / 100) * radius}
-              fill={'#C4C4C4'}
-            />
-            
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: radius * 2,
+              }}>
+              <Image source={image} />
+              <Circle
+                cx="50%"
+                cy="50%"
+                r={(60 / 100) * radius}
+                fill={colors.silver}
+              />
             </View>
           )}
         </G>
         <Defs>
           <LinearGradient id="grad" x1="0.5" y1="1" x2="0.5" y2="0">
-            <Stop offset="0" stopColor="#FD749B" stopOpacity="1" />
-            <Stop offset="0.8" stopColor="#5500ff" stopOpacity="1" />
+            <Stop offset="0" stopColor={colors.tickle_pink} stopOpacity="1" />
+            <Stop offset="0.8" stopColor={colors.electric_violet} stopOpacity="1" />
           </LinearGradient>
         </Defs>
       </Svg>
     </View>
   );
 };
-
 
 CircularProgress.propTypes = {
   showImage: PropTypes.bool,
@@ -185,7 +183,7 @@ CircularProgress.defaultProps = {
   valuePrefix: '',
   valueSuffix: '',
   textStyle: {},
-  activeStrokeColor: '#2ecc71',
+  activeStrokeColor: colors.shamrok,
   inActiveStrokeColor: 'rgba(0,0,0,0.3)',
   inActiveStrokeOpacity: 1,
   activeStrokeWidth: 10,
