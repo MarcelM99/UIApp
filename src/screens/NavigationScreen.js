@@ -7,36 +7,40 @@ import {
   BackHandler,
   ScrollView,
 } from 'react-native';
-import {LinearTextGradient} from 'react-native-text-gradient';
-import {useNavigation} from '@react-navigation/native';
 import BackComponent from '../components/BackComponent';
 import CircularProgress from '../components/proggresBars/CircularProgress';
+import {LinearTextGradient} from 'react-native-text-gradient';
 import grad from '../components/ColorEaseing';
-import SimpleButton from '../components/SimpleButton';
 import images from '../theme/images';
+import SimpleButton from '../components/SimpleButton';
 import styles from './styles/navigatioonScreenStyles';
 import strings from '../theme/strings';
-
+import {useNavigation} from '@react-navigation/native';
 const _buttons = [
   {
     name: strings.navigationScreen.button1,
     active: true,
+    screenName:'DashBoardScr'
   },
   {
     name: strings.navigationScreen.button2,
     active: false,
+    screenName:'ProfileScr'
   },
   {
     name: strings.navigationScreen.button3,
     active: false,
+    screenName:'ChatScreen'
   },
   {
     name: strings.navigationScreen.button4,
     active: false,
+    screenName:'TranzactionHistory'
   },
   {
     name: strings.navigationScreen.button5,
     active: false,
+    screenName:'SettingsScr'
   },
 ];
 const NavigationScreen = () => {
@@ -55,7 +59,7 @@ const NavigationScreen = () => {
           activeStrokeWidth={5}
           inActiveStrokeWidth={4}
           radius={50}
-          activeStrokeColor="url(#grad)"
+          activeStrokeColor='url(#grad)'
           inActiveStrokeColor="pink"
           inActiveStrokeOpacity={0.2}
         />
@@ -79,7 +83,7 @@ const NavigationScreen = () => {
               name={x.name}
               active={x.active}
               navTo={NavigateTo}
-              screenName="BottomNav"
+            screenName={x.screenName}
             />
           ))}
           <TouchableOpacity onPress={() => BackHandler.exitApp()}>

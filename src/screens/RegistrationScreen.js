@@ -30,6 +30,7 @@ const RegistrationScreen = () => {
         <InputComponent
           img={images.group2}
           placeHolder={strings.login.password}
+          value={textChanged}
           textChange={setTextChanged}
         />
         <View style={styles.resetPasswordView}>

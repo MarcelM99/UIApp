@@ -3,10 +3,11 @@ import {View, Image, TextInput} from 'react-native';
 import styles from './styles/inputComponentStyles';
 import colors from '../theme/colors';
 
-const InputComponent = ({img, placeHolder, textChange}) => {
+const InputComponent = ({img, placeHolder, textChange,value}) => {
   return (
     <View style={styles.inputView}>
       <TextInput
+      value={value}
         style={styles.input}
         onChangeText={text => textChange(text)}
         placeholder={placeHolder}

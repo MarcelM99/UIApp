@@ -43,6 +43,7 @@ const SignUpScreen = () => {
         <ImageComponent img={images.boy} text={strings.register.subtitle} />
         {_inputFields.map((x, index) => (
           <InputComponent
+            value={text}
             key={index}
             img={x.img}
             placeHolder={x.placeHolder}

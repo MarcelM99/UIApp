@@ -83,6 +83,7 @@ const SettingsScreen = () => {
           placeHolderTwo={strings.settings.hiddenChar}
           placeHolderThree={strings.settings.hiddenChar}
           setDatas={setPassword}
+          datas={password}
         />
         <View style={styles.billingView}>
           <Text style={styles.billingTitleText}>
@@ -144,6 +145,7 @@ const SettingsScreen = () => {
             <View style={styles.notificationsButtonView}>
               <SwitchButton
                 switchSpeedChange={100}
+                activeSwitch={activeSwitch}
                 switchHeight={18}
                 switchWidth={35}
                 onValueChange={val => setActiveSwitch(val)}
@@ -155,6 +157,7 @@ const SettingsScreen = () => {
             <View style={styles.emailButton}>
               <SwitchButton
                 switchSpeedChange={100}
+                activeSwitch={activeSwitch}
                 switchHeight={18}
                 switchWidth={35}
                 onValueChange={val => setActiveSwitch(val)}

@@ -59,7 +59,7 @@ const ChatNotifications = () => {
       <TopComponent
         showCircle={true}
         navBack={NavigateTo}
-        screenName="Dashboard"
+        screenName="DashBoard"
       />
       <View style={styles.titleView}>
         <Text style={styles.titleText}>{strings.chatNotifications.title}</Text>

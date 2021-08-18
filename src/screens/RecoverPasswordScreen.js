@@ -35,6 +35,7 @@ const RecoverPasswordScreen = () => {
         </View>
         <InputComponent
           img={images.group}
+          value={text}
           placeHolder={strings.recoverPassword.buttonPlaceHolder}
           textChange={setText}
         />

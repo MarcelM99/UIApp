@@ -32,6 +32,7 @@ const NewsletterScreen = () => {
           </LinearTextGradient>
         </View>
         <InputComponent
+        value={text}
           img={images.group}
           placeHolder={strings.newsletter.buttonPlaceHolder}
           textChange={setText}
